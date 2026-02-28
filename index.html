@@ -221,7 +221,7 @@ function toggleMenu() {
     slides[currentIndex].style.opacity = 0; // hide current
     currentIndex = (currentIndex + 1) % slides.length; // next index
     slides[currentIndex].style.opacity = 1; // show next
-  }, 4000); // 4 seconds per slide
+  }, 1000); // 4 seconds per slide
 </script>
 <!-- ======= CAROUSEL SCRIPT END ======= -->
 
@@ -250,5 +250,374 @@ function toggleMenu() {
 </style>
 <!-- ======= RESPONSIVE STYLES END ======= -->
  <!-- ======= HERO STYLES END ======= -->
+  <!-- ======= Session-3 ======= -->
+   <!-- ======= NEXT SECTION START ======= -->
+<section id="features" style="width: 100%; padding: 80px 20px; background-color: #111; color: #FFD700; font-family: Arial, sans-serif; overflow: hidden;">
+
+  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 40px;">
+
+    <!-- ===== LEFT SIDE: Text + Points ===== -->
+    <div class="left-side" style="flex: 1; min-width: 300px; opacity: 0; transform: translateX(-50px); transition: all 1s ease-in-out;">
+      <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Why Choose Terraflux?</h2>
+      <p style="font-size: 1.1rem; margin-bottom: 20px;">We provide seamless logistics, import-export, and warehousing solutions with utmost reliability and quality.</p>
+      <ul style="list-style: disc inside; font-size: 1rem; line-height: 1.8;">
+        <li>Reliable global logistics network ensuring timely deliveries.</li>
+        <li>Premium-quality spices & dry fruits with strict quality control.</li>
+        <li>Secure and modern warehousing with efficient inventory management.</li>
+      </ul>
+    </div>
+
+    <!-- ===== RIGHT SIDE: Image + Cards ===== -->
+    <div class="right-side" style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 20px; opacity: 0; transform: translateX(50px); transition: all 1s ease-in-out;">
+
+      <!-- Main Image -->
+      <img src="https://images.unsplash.com/photo-1606788075762-2c17e0f5b88f?auto=format&fit=crop&w=800&q=80" style="width: 100%; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.5);">
+
+      <!-- Cards -->
+      <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 150px; background-color: #222; border-radius: 10px; padding: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.4); transition: transform 0.3s; cursor: pointer;">
+          <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Fast Delivery</h3>
+          <p style="font-size: 0.95rem; line-height: 1.4;">Timely and reliable shipments across global markets.</p>
+        </div>
+        <div style="flex: 1; min-width: 150px; background-color: #222; border-radius: 10px; padding: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.4); transition: transform 0.3s; cursor: pointer;">
+          <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Quality Assurance</h3>
+          <p style="font-size: 0.95rem; line-height: 1.4;">Premium spices & dry fruits with strict quality checks.</p>
+        </div>
+        <div style="flex: 1; min-width: 150px; background-color: #222; border-radius: 10px; padding: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.4); transition: transform 0.3s; cursor: pointer;">
+          <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Secure Warehousing</h3>
+          <p style="font-size: 0.95rem; line-height: 1.4;">Modern storage with safety and freshness guaranteed.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ======= NEXT SECTION END ======= -->
+
+<!-- ======= ANIMATION SCRIPT START ======= -->
+<script>
+  // Simple scroll-in animation for left and right sides
+  function revealOnScroll() {
+    const left = document.querySelector('.left-side');
+    const right = document.querySelector('.right-side');
+    const windowHeight = window.innerHeight;
+    const leftTop = left.getBoundingClientRect().top;
+    const rightTop = right.getBoundingClientRect().top;
+
+    if(leftTop < windowHeight - 100) {
+      left.style.opacity = 1;
+      left.style.transform = 'translateX(0)';
+    }
+    if(rightTop < windowHeight - 100) {
+      right.style.opacity = 1;
+      right.style.transform = 'translateX(0)';
+    }
+  }
+
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+</script>
+<!-- ======= ANIMATION SCRIPT END ======= -->
+
+<!-- ======= RESPONSIVE STYLES START ======= -->
+<style>
+  @media (max-width: 991px) {
+    #features h2 { font-size: 2rem; }
+    #features p, #features li { font-size: 1rem; }
+    .right-side div { min-width: 100%; }
+  }
+  @media (max-width: 576px) {
+    #features { padding: 60px 15px; }
+    #features h2 { font-size: 1.7rem; }
+    #features p, #features li { font-size: 0.95rem; }
+  }
+
+  /* Card hover effect */
+  .right-side div:hover {
+    transform: translateY(-5px);
+  }
+</style>
+<!-- ======= RESPONSIVE STYLES END ======= -->
+ <!-- ======= NEXT SESSION START ======= -->
+<section id="services" style="width: 100%; padding: 80px 20px; background-color: #000; color: #FFD700; font-family: Arial, sans-serif; overflow: hidden;">
+
+  <div style="max-width: 1200px; margin: auto; text-align: center;">
+    <h2 style="font-size: 2.5rem; margin-bottom: 40px; opacity:0; transform: translateY(50px); transition: all 1s ease-in-out;" class="reveal">Our Premium Services</h2>
+    
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+      
+      <!-- Card 1 -->
+      <div class="service-card" style="flex: 1; min-width: 250px; max-width: 300px; background-color: #111; padding: 20px; border-radius: 10px; box-shadow: 0 5px 20px rgba(255,215,0,0.2); opacity:0; transform: translateY(50px); transition: all 1s ease-in-out;">
+        <img src="https://images.unsplash.com/photo-1616627569481-66a9d0f8c5df?auto=format&fit=crop&w=600&q=80" style="width:100%; border-radius: 8px; margin-bottom: 15px;">
+        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Global Logistics</h3>
+        <p>Efficient worldwide logistics ensuring timely deliveries for your business.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="service-card" style="flex: 1; min-width: 250px; max-width: 300px; background-color: #111; padding: 20px; border-radius: 10px; box-shadow: 0 5px 20px rgba(255,215,0,0.2); opacity:0; transform: translateY(50px); transition: all 1s ease-in-out;">
+        <img src="https://images.unsplash.com/photo-1602526216237-1d8f0c7c0423?auto=format&fit=crop&w=600&q=80" style="width:100%; border-radius: 8px; margin-bottom: 15px;">
+        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Premium Products</h3>
+        <p>High-quality spices and dry fruits sourced from trusted global suppliers.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="service-card" style="flex: 1; min-width: 250px; max-width: 300px; background-color: #111; padding: 20px; border-radius: 10px; box-shadow: 0 5px 20px rgba(255,215,0,0.2); opacity:0; transform: translateY(50px); transition: all 1s ease-in-out;">
+        <img src="https://images.unsplash.com/photo-1606788075762-2c17e0f5b88f?auto=format&fit=crop&w=600&q=80" style="width:100%; border-radius: 8px; margin-bottom: 15px;">
+        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Secure Warehousing</h3>
+        <p>Modern storage facilities keeping products fresh, safe, and ready for shipment.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ======= NEXT SESSION END ======= -->
+
+<!-- ======= ANIMATION SCRIPT START ======= -->
+<script>
+  // Reveal elements on scroll
+  function revealNextSession() {
+    const elements = document.querySelectorAll('.reveal, .service-card');
+    const windowHeight = window.innerHeight;
+
+    elements.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if(top < windowHeight - 100){
+        el.style.opacity = 1;
+        el.style.transform = 'translateY(0)';
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealNextSession);
+  window.addEventListener('load', revealNextSession);
+</script>
+<!-- ======= ANIMATION SCRIPT END ======= -->
+
+<!-- ======= RESPONSIVE STYLES START ======= -->
+<style>
+  @media (max-width: 991px) {
+    #services h2 { font-size: 2rem; }
+    .service-card h3 { font-size: 1.2rem; }
+    .service-card p { font-size: 1rem; }
+  }
+  @media (max-width: 576px) {
+    #services { padding: 60px 15px; }
+    #services h2 { font-size: 1.7rem; }
+    .service-card h3 { font-size: 1.1rem; }
+    .service-card p { font-size: 0.95rem; }
+  }
+</style>
+<!-- ======= RESPONSIVE STYLES END ======= -->
+ <!-- ======= PERFORMANCE / HIGHLIGHTS SESSION START ======= -->
+<section id="performance" style="width: 100%; padding: 100px 20px; background-color: #111; color: #FFD700; font-family: Arial, sans-serif; text-align: center; overflow: hidden;">
+
+  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 50px;">
+
+    <!-- Stat 1 -->
+    <div class="stat-card" style="flex: 1; min-width: 200px; max-width: 250px; padding: 30px; border-radius: 15px; background-color: #222; box-shadow: 0 5px 25px rgba(255,215,0,0.2); opacity:0; transform: translateY(50px); transition: all 0.8s ease-in-out;">
+      <h2 style="font-size: 3rem; margin-bottom: 10px; text-shadow: 0 0 10px #FFD700;">950K+</h2>
+      <p style="font-size: 1.1rem;">Deliveries</p>
+    </div>
+
+    <!-- Stat 2 -->
+    <div class="stat-card" style="flex: 1; min-width: 200px; max-width: 250px; padding: 30px; border-radius: 15px; background-color: #222; box-shadow: 0 5px 25px rgba(255,215,0,0.2); opacity:0; transform: translateY(50px); transition: all 0.8s ease-in-out;">
+      <h2 style="font-size: 3rem; margin-bottom: 10px; text-shadow: 0 0 10px #FFD700;">450K+</h2>
+      <p style="font-size: 1.1rem;">Global Shipments</p>
+    </div>
+
+    <!-- Stat 3 -->
+    <div class="stat-card" style="flex: 1; min-width: 200px; max-width: 250px; padding: 30px; border-radius: 15px; background-color: #222; box-shadow: 0 5px 25px rgba(255,215,0,0.2); opacity:0; transform: translateY(50px); transition: all 0.8s ease-in-out;">
+      <h2 style="font-size: 3rem; margin-bottom: 10px; text-shadow: 0 0 10px #FFD700;">220K+</h2>
+      <p style="font-size: 1.1rem;">Service Capacity</p>
+    </div>
+
+    <!-- Stat 4 -->
+    <div class="stat-card" style="flex: 1; min-width: 200px; max-width: 250px; padding: 30px; border-radius: 15px; background-color: #222; box-shadow: 0 5px 25px rgba(255,215,0,0.2); opacity:0; transform: translateY(50px); transition: all 0.8s ease-in-out;">
+      <h2 style="font-size: 3rem; margin-bottom: 10px; text-shadow: 0 0 10px #FFD700;">100K+</h2>
+      <p style="font-size: 1.1rem;">Happy Clients</p>
+    </div>
+
+  </div>
+</section>
+<!-- ======= PERFORMANCE / HIGHLIGHTS SESSION END ======= -->
+
+<!-- ======= ANIMATION SCRIPT START ======= -->
+<script>
+  // Scroll reveal with delay for smooth cascading effect
+  function revealStats() {
+    const stats = document.querySelectorAll('.stat-card');
+    const windowHeight = window.innerHeight;
+
+    stats.forEach((stat, index) => {
+      const top = stat.getBoundingClientRect().top;
+      if(top < windowHeight - 100){
+        setTimeout(() => {
+          stat.style.opacity = 1;
+          stat.style.transform = 'translateY(0)';
+        }, index * 150); // cascade effect
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealStats);
+  window.addEventListener('load', revealStats);
+</script>
+<!-- ======= ANIMATION SCRIPT END ======= -->
+
+<!-- ======= RESPONSIVE & HOVER STYLES START ======= -->
+<style>
+  /* Hover Effect */
+  .stat-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 40px rgba(255,215,0,0.5);
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Responsive */
+  @media (max-width: 991px) {
+    .stat-card h2 { font-size: 2.5rem; }
+    .stat-card p { font-size: 1rem; }
+  }
+  @media (max-width: 576px) {
+    #performance { padding: 60px 15px; }
+    .stat-card h2 { font-size: 2rem; }
+    .stat-card p { font-size: 0.95rem; }
+  }
+</style>
+<!-- ======= RESPONSIVE & HOVER STYLES END ======= -->
+ <!-- ======= TESTIMONIALS / CLIENT FEEDBACK SESSION START ======= -->
+<section id="testimonials" style="width: 100%; padding: 100px 20px; background-color: #000; color: #FFD700; font-family: Arial, sans-serif; overflow: hidden; text-align: center;">
+
+  <div style="max-width: 1200px; margin: auto;">
+    <h2 style="font-size: 2.5rem; margin-bottom: 50px; opacity:0; transform: translateY(50px); transition: all 1s ease-in-out;" class="reveal">What Our Clients Say</h2>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+
+      <!-- Testimonial 1 -->
+      <div class="testimonial-card" style="flex: 1; min-width: 280px; max-width: 350px; background-color: #111; padding: 30px; border-radius: 15px; box-shadow: 0 5px 25px rgba(255,215,0,0.2); opacity:0; transform: translateY(50px); transition: all 0.8s ease-in-out; cursor: pointer;">
+        <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 20px;">“Excellent logistics and consistent quality. Terraflux makes global trade seamless and reliable.”</p>
+        <h4 style="font-size: 1.2rem; margin-bottom: 5px;">– Priya Sharma</h4>
+        <span style="font-size: 0.9rem; color: #FFD700;">Global Trader</span>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card" style="flex: 1; min-width: 280px; max-width: 350px; background-color: #111; padding: 30px; border-radius: 15px; box-shadow: 0 5px 25px rgba(255,215,0,0.2); opacity:0; transform: translateY(50px); transition: all 0.8s ease-in-out; cursor: pointer;">
+        <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 20px;">“Secure warehousing and timely deliveries have helped our business grow globally.”</p>
+        <h4 style="font-size: 1.2rem; margin-bottom: 5px;">– Rajesh Kumar</h4>
+        <span style="font-size: 0.9rem; color: #FFD700;">Spice Exporter</span>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="testimonial-card" style="flex: 1; min-width: 280px; max-width: 350px; background-color: #111; padding: 30px; border-radius: 15px; box-shadow: 0 5px 25px rgba(255,215,0,0.2); opacity:0; transform: translateY(50px); transition: all 0.8s ease-in-out; cursor: pointer;">
+        <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 20px;">“Highly professional service. Easy communication and excellent support for international shipments.”</p>
+        <h4 style="font-size: 1.2rem; margin-bottom: 5px;">– Anjali Verma</h4>
+        <span style="font-size: 0.9rem; color: #FFD700;">Dry Fruits Supplier</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ======= TESTIMONIALS / CLIENT FEEDBACK SESSION END ======= -->
+
+<!-- ======= ANIMATION SCRIPT START ======= -->
+<script>
+  // Scroll reveal for testimonials
+  function revealTestimonials() {
+    const elements = document.querySelectorAll('.reveal, .testimonial-card');
+    const windowHeight = window.innerHeight;
+
+    elements.forEach((el, index) => {
+      const top = el.getBoundingClientRect().top;
+      if(top < windowHeight - 100){
+        setTimeout(() => {
+          el.style.opacity = 1;
+          el.style.transform = 'translateY(0)';
+        }, index * 150);
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealTestimonials);
+  window.addEventListener('load', revealTestimonials);
+</script>
+<!-- ======= ANIMATION SCRIPT END ======= -->
+
+<!-- ======= RESPONSIVE & HOVER STYLES START ======= -->
+<style>
+  /* Hover effect */
+  .testimonial-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 40px rgba(255,215,0,0.5);
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Responsive */
+  @media (max-width: 991px) {
+    #testimonials h2 { font-size: 2rem; }
+    .testimonial-card p { font-size: 0.95rem; }
+    .testimonial-card h4 { font-size: 1.1rem; }
+  }
+  @media (max-width: 576px) {
+    #testimonials { padding: 60px 15px; }
+    #testimonials h2 { font-size: 1.7rem; }
+    .testimonial-card p { font-size: 0.9rem; }
+    .testimonial-card h4 { font-size: 1rem; }
+  }
+</style>
+<!-- ======= RESPONSIVE & HOVER STYLES END ======= -->
+ <!-- ======= FOOTER SESSION START ======= -->
+<footer style="width: 100%; background-color: #111; color: #FFD700; font-family: Arial, sans-serif; padding: 60px 20px; text-align: center;">
+
+  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
+
+    <!-- Contact Info -->
+    <div style="flex:1; min-width: 250px; text-align: left;">
+      <h3 style="font-size: 1.5rem; margin-bottom: 15px;">Terraflux Global Ventures</h3>
+      <p style="font-size: 1rem; line-height: 1.6;">
+        #22/23, 2nd Floor, T M Plaza,<br>
+        Double Road, Rajarajeshwari Nagar,<br>
+        Bengaluru – 580096
+      </p>
+      <p style="font-size: 1rem; margin:5px 0;">📞 +91 9663938889</p>
+      <p style="font-size: 1rem; margin:5px 0;">🌐 <a href="http://www.terrafluxgv.com" style="color:#FFD700; text-decoration: underline;">www.terrafluxgv.com</a></p>
+      <p style="font-size: 1rem; margin:5px 0;">📧 <a href="mailto:enquiry@terrafluxgv.com" style="color:#FFD700; text-decoration: underline;">enquiry@terrafluxgv.com</a></p>
+    </div>
+
+   
+    <!-- Social / Extra -->
+    <div style="flex:1; min-width: 200px; text-align: left;">
+      <h3 style="font-size: 1.5rem; margin-bottom: 15px;">Follow Us</h3>
+      <div style="display:flex; gap:15px; font-size:1.2rem;">
+        <a href="#" style="color:#FFD700; text-decoration:none;">🌐</a>
+        <a href="#" style="color:#FFD700; text-decoration:none;">📘</a>
+        <a href="#" style="color:#FFD700; text-decoration:none;">🐦</a>
+        <a href="#" style="color:#FFD700; text-decoration:none;">🔗</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div style="margin-top:50px; border-top: 1px solid #FFD700; padding-top:20px; font-size:0.95rem; opacity:0.8;">
+    &copy; 2026 Terraflux Global Ventures Pvt Ltd. All Rights Reserved.
+  </div>
+</footer>
+<!-- ======= FOOTER SESSION END ======= -->
+
+<!-- ======= RESPONSIVE FOOTER STYLES START ======= -->
+<style>
+  @media (max-width: 991px) {
+    footer div { text-align: center; }
+    footer ul { text-align: center; }
+    footer h3 { font-size: 1.3rem; }
+    footer p, footer a { font-size: 0.95rem; }
+  }
+  @media (max-width: 576px) {
+    footer { padding: 40px 15px; }
+    footer h3 { font-size: 1.2rem; }
+    footer p, footer a { font-size: 0.9rem; }
+  }
+</style>
+<!-- ======= RESPONSIVE FOOTER STYLES END ======= -->
 </body>
 </html>
