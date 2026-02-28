@@ -1,623 +1,477 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terraflux Global Ventures Pvt Ltd</title>
-<!-- ====================== HEDDERSTART ====================== -->
-<style>
-/* ===== Body Reset ===== */
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
+<!-- ===== HEADER SECTION START ===== -->
+<header style="position:fixed;top:0;width:100%;background:#0D0D0D;border-bottom:1px solid #D4AF37;z-index:1000;font-family:Georgia,serif;">
+  <div style="max-width:1400px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:18px 8%;">
 
-/* ===== Header Styling ===== */
-header {
-  width: 100%;
-  background: #1a1a1a; /* Elephant Black */
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-}
-
-/* ===== Header Container ===== */
-.header-container {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 20px;
-}
-
-/* ===== Logo ===== */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo img {
-  height: 50px; /* adjust logo size */
-}
-
-.logo span {
-  color: #d4af37;
-  font-size: 20px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-/* ===== Desktop Navigation ===== */
-nav a {
-  color: #d4af37;
-  text-decoration: none;
-  font-size: 15px;
-  position: relative;
-  transition: 0.3s;
-  padding: 6px 0;
-}
-
-nav a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  left: 0;
-  bottom: -4px;
-  background: #d4af37;
-  transition: 0.4s ease;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-/* ===== Mobile Hamburger ===== */
-#menuBtn {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: #d4af37;
-}
-
-/* ===== Mobile Menu ===== */
-#mobileMenu {
-  display: none;
-  flex-direction: column;
-  background: #111;
-  text-align: right;
-  padding: 15px 25px;
-}
-
-#mobileMenu a {
-  color: #d4af37;
-  text-decoration: none;
-  font-size: 15px;
-  padding: 8px 0;
-  position: relative;
-}
-
-#mobileMenu a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  left: 0;
-  bottom: -2px;
-  background: #d4af37;
-  transition: 0.4s ease;
-}
-
-#mobileMenu a:hover::after {
-  width: 100%;
-}
-
-/* ===== Responsive ===== */
-@media (max-width:768px){
-  nav { display: none !important; }
-  #menuBtn { display: block !important; }
-}
-
-/* ===== Smooth Scroll ===== */
-html { scroll-behavior: smooth; }
-
-</style>
-</head>
-<body>
-
-<!-- ====================== HEADER START ====================== -->
-<header>
-  <div class="header-container">
-
-    <!-- Logo & Company Name -->
-    <div class="logo">
-      <img src="Terraflux Global Venture Pvt Ltd (Logo).jpg.jpeg" alt="Terraflux Logo">
-      <span>Terraflux Global Ventures Pvt Ltd</span>
+    <!-- LOGO -->
+    <div style="display:flex;align-items:center;gap:10px;">
+      <img src="https://dummyimage.com/120x40/d4af37/000000&text=TF" alt="Company Logo" style="height:40px;border-radius:4px;">
+      <span style="color:#D4AF37;font-size:1.2rem;letter-spacing:2px;font-weight:600;">TERRAFLUX</span>
     </div>
 
-    <!-- Desktop Navigation -->
-    <nav id="navMenu" style="opacity:0; transform: translateY(-15px); transition: all 0.6s ease;">
-      <a href="about.html">About</a>
-      <a href="logistics.html">Logistics</a>
-      <a href="importexport.html">Import & Export</a>
-      <a href="warehouse.html">Warehouse</a>
-      <a href="contact.html">Contact</a>
+    <!-- NAVIGATION LINKS -->
+    <nav id="navMenu" style="display:flex;gap:35px;">
+      <a href="index.html" style="color:#EDEDED;text-decoration:none;font-size:0.95rem;letter-spacing:1px;">Home</a>
+      <a href="about.html" style="color:#EDEDED;text-decoration:none;font-size:0.95rem;letter-spacing:1px;">About</a>
+      <a href="logistics.html" style="color:#EDEDED;text-decoration:none;font-size:0.95rem;letter-spacing:1px;">Logistics</a>
+      <a href="warehousing.html" style="color:#EDEDED;text-decoration:none;font-size:0.95rem;letter-spacing:1px;">Warehousing</a>
+      <a href="contact.html" style="color:#EDEDED;text-decoration:none;font-size:0.95rem;letter-spacing:1px;">Contact</a>
     </nav>
 
-    <!-- Mobile Hamburger -->
-    <div id="menuBtn" onclick="toggleMenu()">☰</div>
+    <!-- HAMBURGER (MOBILE) -->
+    <div id="menuToggle" style="display:none;flex-direction:column;cursor:pointer;">
+      <span style="width:25px;height:3px;background:#D4AF37;margin:4px 0;transition:0.4s;"></span>
+      <span style="width:25px;height:3px;background:#D4AF37;margin:4px 0;transition:0.4s;"></span>
+      <span style="width:25px;height:3px;background:#D4AF37;margin:4px 0;transition:0.4s;"></span>
+    </div>
 
   </div>
 
-  <!-- Mobile Dropdown Menu -->
-  <div id="mobileMenu">
-    <a href="about.html">About</a>
-    <a href="logistics.html">Logistics</a>
-    <a href="importexport.html">Import & Export</a>
-    <a href="warehouse.html">Warehouse</a>
-    <a href="contact.html">Contact</a>
-  </div>
+  <!-- ===== HEADER SCRIPT ===== -->
+  <script>
+    (function(){
+      const nav = document.getElementById("navMenu");
+      const toggle = document.getElementById("menuToggle");
+      const spans = toggle.querySelectorAll("span");
+
+      function checkScreen(){
+        if(window.innerWidth <= 768){
+          toggle.style.display = "flex";
+
+          nav.style.position = "fixed";
+          nav.style.top = "70px";
+          nav.style.right = "-100%";
+          nav.style.flexDirection = "column";
+          nav.style.background = "#0D0D0D";
+          nav.style.width = "240px";
+          nav.style.height = "100vh";
+          nav.style.padding = "40px 25px";
+          nav.style.transition = "0.4s";
+        } else {
+          toggle.style.display = "none";
+          nav.style.position = "static";
+          nav.style.flexDirection = "row";
+          nav.style.height = "auto";
+          nav.style.width = "auto";
+          nav.style.padding = "0";
+          nav.style.right = "0";
+          spans[0].style.transform = "rotate(0) translate(0,0)";
+          spans[1].style.opacity = "1";
+          spans[2].style.transform = "rotate(0) translate(0,0)";
+        }
+      }
+
+      toggle.addEventListener("click", function(){
+        if(nav.style.right === "0px" || nav.style.right === "0"){
+          nav.style.right = "-100%";
+          spans[0].style.transform = "rotate(0) translate(0,0)";
+          spans[1].style.opacity = "1";
+          spans[2].style.transform = "rotate(0) translate(0,0)";
+        } else {
+          nav.style.right = "0";
+          spans[0].style.transform = "rotate(45deg) translate(5px,5px)";
+          spans[1].style.opacity = "0";
+          spans[2].style.transform = "rotate(-45deg) translate(5px,-5px)";
+        }
+      });
+
+      document.querySelectorAll("#navMenu a").forEach(link=>{
+        link.addEventListener("click", ()=>{
+          if(window.innerWidth <= 768){
+            nav.style.right = "-100%";
+            spans[0].style.transform = "rotate(0) translate(0,0)";
+            spans[1].style.opacity = "1";
+            spans[2].style.transform = "rotate(0) translate(0,0)";
+          }
+        });
+      });
+
+      window.addEventListener("resize", checkScreen);
+      window.addEventListener("load", checkScreen);
+    })();
+  </script>
+
+  <!-- ===== HEADER RESPONSIVE STYLES ===== -->
+  <style>
+    @media (max-width: 768px){
+      #navMenu a { margin:15px 0; font-size:1rem; }
+    }
+    @media (max-width: 480px){
+      #navMenu { width: 100%; padding: 50px 20px; }
+      #menuToggle span { width:20px; height:3px; }
+      header div[style*="padding:18px 8%"] { padding:15px 5%; }
+    }
+  </style>
 </header>
-<!-- ====================== HEADER END ====================== -->
+<!-- ===== HEADER SECTION END ===== -->
 
-<!-- ====================== SAMPLE SECTIONS ====================== -->
+<!-- ===== SPICE HERO SECTION START ===== -->
+<!-- ===== SPICE HERO SECTION START ===== -->
+<section id="spiceHero" style="position:relative;width:100%;height:90vh;overflow:hidden;background:#0D0D0D;font-family:Georgia,serif;">
 
+  <div id="spiceSlides" style="width:100%;height:100%;position:relative;">
 
-<script>
-/* ===== Animate Desktop Navigation ===== */
-window.addEventListener("load", function() {
-  if (window.innerWidth > 768) {
-    const nav = document.getElementById("navMenu");
-    nav.style.opacity = "1";
-    nav.style.transform = "translateY(0)";
-  }
-});
-
-/* ===== Mobile Toggle ===== */
-function toggleMenu() {
-  const menu = document.getElementById("mobileMenu");
-  menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-}
-</script>
-<!-- ====================== HEDDER END ====================== -->
-
-
-<!-- ======= HERO SECTION START ======= -->
-<section id="hero" style="position: relative; width: 100%; height: 90vh; overflow: hidden; font-family: Arial, sans-serif; background-color: #000; color: #FFD700;">
-
-  <!-- Slides Container -->
-  <div id="slides-container" style="width: 100%; height: 100%; position: relative;">
-
-    <!-- Slides -->
-    <img class="slide active" src="https://images.unsplash.com/photo-1606788075762-2c17e0f5b88f?auto=format&fit=crop&w=1950&q=80" style="width:100%; height:100%; object-fit: cover; position:absolute; top:0; left:0; opacity:1; transition: opacity 1s;">
-    <img class="slide" src="https://images.unsplash.com/photo-1625249942060-3a9f99eb102e?auto=format&fit=crop&w=1950&q=80" style="width:100%; height:100%; object-fit: cover; position:absolute; top:0; left:0; opacity:0; transition: opacity 1s;">
-    <img class="slide" src="https://images.unsplash.com/photo-1617196031515-8fa7f9a18f02?auto=format&fit=crop&w=1950&q=80" style="width:100%; height:100%; object-fit: cover; position:absolute; top:0; left:0; opacity:0; transition: opacity 1s;">
-    <img class="slide" src="https://images.unsplash.com/photo-1616627569481-66a9d0f8c5df?auto=format&fit=crop&w=1950&q=80" style="width:100%; height:100%; object-fit: cover; position:absolute; top:0; left:0; opacity:0; transition: opacity 1s;">
-    <img class="slide" src="https://images.unsplash.com/photo-1602526216237-1d8f0c7c0423?auto=format&fit=crop&w=1950&q=80" style="width:100%; height:100%; object-fit: cover; position:absolute; top:0; left:0; opacity:0; transition: opacity 1s;">
-    <img class="slide" src="https://images.unsplash.com/photo-1581091870620-96c27087c49f?auto=format&fit=crop&w=1950&q=80" style="width:100%; height:100%; object-fit: cover; position:absolute; top:0; left:0; opacity:0; transition: opacity 1s;">
-
-    <!-- Overlay Content -->
-    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; padding: 0 20px; z-index: 2; width: 90%; max-width: 900px;">
-      <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 20px;">LOGISTICS, IMPORT & EXPORT, WAREHOUSE SOLUTIONS</h1>
-      <p style="font-size: 1.2rem; margin-bottom: 30px;">Terraflux Global Ventures Pvt Ltd provides premium spices & dry fruits with seamless logistics and warehousing services worldwide.</p>
-      <div style="display: flex; justify-content: center; flex-wrap: wrap;">
-        <a href="contact.html" style="text-decoration: none; margin: 10px; padding: 15px 30px; background-color: #FFD700; color: #000; font-weight: bold; border-radius: 5px; text-align:center;">Contact Us</a>
-        <a href="logistics.html" style="text-decoration: none; margin: 10px; padding: 15px 30px; background-color: #FFD700; color: #000; font-weight: bold; border-radius: 5px; text-align:center;">Start Business</a>
+    <!-- Cashew Slide -->
+    <div class="spiceSlide" style="position:absolute;top:0;left:0;width:100%;height:100%;background:url('https://images.pexels.com/photos/3965544/pexels-photo-3965544.jpeg?auto=compress&cs=tinysrgb&w=1470') center/cover no-repeat;opacity:1;transition:opacity 1s;">
+      <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(13,13,13,0.6);"></div>
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:#EDEDED;padding:0 20px;">
+        <h1 style="color:#D4AF37;font-size:3rem;font-weight:700;margin-bottom:10px;">Premium Cashew & Nut Logistics</h1>
+        <p style="font-size:1.2rem;margin-bottom:25px;">Reliable and secure handling from origin to destination.</p>
       </div>
     </div>
+
+    <!-- Cardamom Slide -->
+    <div class="spiceSlide" style="position:absolute;top:0;left:0;width:100%;height:100%;background:url('https://images.pexels.com/photos/13090744/pexels-photo-13090744.jpeg?auto=compress&cs=tinysrgb&w=1470') center/cover no-repeat;opacity:0;transition:opacity 1s;">
+      <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(13,13,13,0.6);"></div>
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:#EDEDED;padding:0 20px;">
+        <h1 style="color:#D4AF37;font-size:3rem;font-weight:700;margin-bottom:10px;">Cardamom Export Simplified</h1>
+        <p style="font-size:1.2rem;margin-bottom:25px;">Efficient international trade support for spice exporters.</p>
+      </div>
+    </div>
+
+    <!-- Clove Slide -->
+    <div class="spiceSlide" style="position:absolute;top:0;left:0;width:100%;height:100%;background:url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1470') center/cover no-repeat;opacity:0;transition:opacity 1s;">
+      <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(13,13,13,0.6);"></div>
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:#EDEDED;padding:0 20px;">
+        <h1 style="color:#D4AF37;font-size:3rem;font-weight:700;margin-bottom:10px;">Clove Trade & Transport</h1>
+        <p style="font-size:1.2rem;margin-bottom:25px;">Secure logistics for premium spice consignments.</p>
+      </div>
+    </div>
+
+    <!-- Mixed Spices Slide -->
+    <div class="spiceSlide" style="position:absolute;top:0;left:0;width:100%;height:100%;background:url('https://images.pexels.com/photos/4146454/pexels-photo-4146454.jpeg?auto=compress&cs=tinysrgb&w=1470') center/cover no-repeat;opacity:0;transition:opacity 1s;">
+      <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(13,13,13,0.6);"></div>
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:#EDEDED;padding:0 20px;">
+        <h1 style="color:#D4AF37;font-size:3rem;font-weight:700;margin-bottom:10px;">Quality Spice & Commodity Care</h1>
+        <p style="font-size:1.2rem;margin-bottom:25px;">Holistic export solutions for multi‑commodity supply chains.</p>
+      </div>
+    </div>
+
   </div>
+
+  <!-- Navigation Dots -->
+  <div id="spiceDots" style="position:absolute;bottom:25px;width:100%;text-align:center;">
+    <span class="spDot" style="height:12px;width:12px;margin:0 6px;display:inline-block;border-radius:50%;background:#D4AF37;opacity:0.7;cursor:pointer;"></span>
+    <span class="spDot" style="height:12px;width:12px;margin:0 6px;display:inline-block;border-radius:50%;background:#D4AF37;opacity:0.3;cursor:pointer;"></span>
+    <span class="spDot" style="height:12px;width:12px;margin:0 6px;display:inline-block;border-radius:50%;background:#D4AF37;opacity:0.3;cursor:pointer;"></span>
+    <span class="spDot" style="height:12px;width:12px;margin:0 6px;display:inline-block;border-radius:50%;background:#D4AF37;opacity:0.3;cursor:pointer;"></span>
+  </div>
+
 </section>
-<!-- ======= HERO SECTION END ======= -->
 
-<!-- ======= CAROUSEL SCRIPT START ======= -->
-<script>
-  const slides = document.querySelectorAll('.slide');
-  let currentIndex = 0;
-
-  setInterval(() => {
-    slides[currentIndex].style.opacity = 0; // hide current
-    currentIndex = (currentIndex + 1) % slides.length; // next index
-    slides[currentIndex].style.opacity = 1; // show next
-  }, 1000); // 4 seconds per slide
-</script>
-<!-- ======= CAROUSEL SCRIPT END ======= -->
-
-<!-- ======= RESPONSIVE STYLES START ======= -->
+<!-- ===== SPICE HERO RESPONSIVE STYLES ===== -->
 <style>
-  /* Small devices (phones, <768px) */
-  @media (max-width: 767px) {
-    #hero h1 { font-size: 2rem; }
-    #hero p { font-size: 1rem; }
-    #hero a { padding: 12px 25px; font-size: 0.9rem; }
+  /* Heading & text responsiveness */
+  @media (max-width: 1200px){
+    #spiceHero h1 { font-size:2.5rem; }
+    #spiceHero p { font-size:1.1rem; }
   }
-
-  /* Medium devices (tablets, 768px-991px) */
-  @media (min-width: 768px) and (max-width: 991px) {
-    #hero h1 { font-size: 2.5rem; }
-    #hero p { font-size: 1.1rem; }
-    #hero a { padding: 14px 28px; font-size: 1rem; }
+  @media (max-width: 992px){
+    #spiceHero h1 { font-size:2.2rem; }
+    #spiceHero p { font-size:1rem; }
   }
-
-  /* Large devices (desktops >992px) */
-  @media (min-width: 992px) {
-    #hero h1 { font-size: 3rem; }
-    #hero p { font-size: 1.2rem; }
-    #hero a { padding: 15px 30px; font-size: 1rem; }
+  @media (max-width: 576px){
+    #spiceHero { height:80vh; }
+    #spiceHero h1 { font-size:1.8rem; }
+    #spiceHero p { font-size:0.95rem; }
+    #spiceHero div[style*="text-align:center"] { padding:0 15px; }
+    #spiceDots span { height:10px; width:10px; margin:0 4px; }
   }
 </style>
-<!-- ======= RESPONSIVE STYLES END ======= -->
- <!-- ======= HERO STYLES END ======= -->
-  <!-- ======= Session-3 ======= -->
-   <!-- ======= NEXT SECTION START ======= -->
-<section id="features" style="width: 100%; padding: 80px 20px; background-color: #111; color: #FFD700; font-family: Arial, sans-serif; overflow: hidden;">
 
-  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 40px;">
+<!-- ===== SPICE HERO SLIDER SCRIPT ===== -->
+<script>
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.spiceSlide');
+  const dots = document.querySelectorAll('.spDot');
 
-    <!-- ===== LEFT SIDE: Text + Points ===== -->
-    <div class="left-side" style="flex: 1; min-width: 300px; opacity: 0; transform: translateX(-50px); transition: all 1s ease-in-out;">
-      <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Why Choose Terraflux?</h2>
-      <p style="font-size: 1.1rem; margin-bottom: 20px;">We provide seamless logistics, import-export, and warehousing solutions with utmost reliability and quality.</p>
-      <ul style="list-style: disc inside; font-size: 1rem; line-height: 1.8;">
-        <li>Reliable global logistics network ensuring timely deliveries.</li>
-        <li>Premium-quality spices & dry fruits with strict quality control.</li>
-        <li>Secure and modern warehousing with efficient inventory management.</li>
+  function showSlide(n){
+    slides.forEach((s,i)=>{
+      s.style.opacity = (i === n) ? '1' : '0';
+    });
+    dots.forEach((d,i)=>{
+      d.style.opacity = (i === n) ? '0.7' : '0.3';
+    });
+  }
+
+  function nextSlide(){
+    slideIndex = (slideIndex+1)%slides.length;
+    showSlide(slideIndex);
+  }
+
+  // Auto-slide every 5 seconds
+  setInterval(nextSlide,5000);
+
+  // Clickable dots
+  dots.forEach((dot,i)=>{
+    dot.addEventListener('click',()=>{
+      slideIndex = i;
+      showSlide(slideIndex);
+    });
+  });
+</script>
+
+<!-- ===== SPICE HERO SCRIPT ===== -->
+<script>
+  (function(){
+    const slides = document.querySelectorAll("#spiceSlides .spiceSlide");
+    const dots = document.querySelectorAll("#spiceDots .spDot");
+    let idx = 0;
+
+    function show(idx2){
+      slides.forEach((s,i)=> {
+        s.style.opacity = (i===idx2)? "1":"0";
+        dots[i].style.opacity = (i===idx2)? "0.7":"0.3";
+      });
+    }
+
+    function next(){ idx=(idx+1)%slides.length; show(idx); }
+
+    dots.forEach((d,i)=> d.addEventListener("click",()=> show(i)));
+    show(0);
+    setInterval(next,4500);
+  })();
+</script>
+<!-- ===== SPICE HERO SECTION END ===== -->
+<!-- ===== LANDING FEATURES SECTION START ===== -->
+<section id="landingFeatures" style="background:#0D0D0D;color:#EDEDED;font-family:Georgia,serif;padding:80px 5%;text-align:center;overflow:hidden;">
+
+  <!-- Section Heading -->
+  <div style="margin-bottom:60px;">
+    <h2 style="color:#D4AF37;font-size:2.5rem;margin-bottom:10px;">Why Choose Terraflux</h2>
+    <p style="max-width:700px;margin:auto;font-size:1.1rem;color:#EDEDED;">
+      Premium solutions, modern logistics, and secure handling for your global trade needs.
+    </p>
+  </div>
+
+  <!-- Cards Container -->
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:30px;">
+
+    <!-- Left Card -->
+    <div class="landingCard" style="background:#1A1A1A;border:1px solid #D4AF37;border-radius:12px;flex:1 1 300px;max-width:300px;padding:25px;opacity:0;transform:translateX(-100px);transition: all 0.8s ease;">
+      <img src="https://images.unsplash.com/photo-1601896488627-d5aee9d7cf2e?auto=format&fit=crop&w=600&q=80" alt="Logistics" style="width:100%;border-radius:8px;margin-bottom:15px;">
+      <h3 style="color:#D4AF37;font-size:1.3rem;margin-bottom:10px;">Efficient Logistics</h3>
+      <p style="font-size:0.95rem;">Global supply chain solutions that ensure safe, timely, and trackable delivery of goods.</p>
+    </div>
+
+    <!-- Middle Card -->
+    <div class="landingCard" style="background:#1A1A1A;border:1px solid #D4AF37;border-radius:12px;flex:1 1 300px;max-width:300px;padding:25px;opacity:0;transform:scale(0.5);transition: all 0.8s ease;">
+      <img src="https://images.unsplash.com/photo-1581092795368-893464fd47a3?auto=format&fit=crop&w=600&q=80" alt="Warehousing" style="width:100%;border-radius:8px;margin-bottom:15px;">
+      <h3 style="color:#D4AF37;font-size:1.3rem;margin-bottom:10px;">Modern Warehousing</h3>
+      <p style="font-size:0.95rem;">Safe, organized storage with inventory management for all types of commodities.</p>
+    </div>
+
+    <!-- Right Card -->
+    <div class="landingCard" style="background:#1A1A1A;border:1px solid #D4AF37;border-radius:12px;flex:1 1 300px;max-width:300px;padding:25px;opacity:0;transform:translateX(100px);transition: all 0.8s ease;">
+      <img src="https://images.unsplash.com/photo-1571154732939-236a7f0d064b?auto=format&fit=crop&w=600&q=80" alt="Transportation" style="width:100%;border-radius:8px;margin-bottom:15px;">
+      <h3 style="color:#D4AF37;font-size:1.3rem;margin-bottom:10px;">Reliable Transport</h3>
+      <p style="font-size:0.95rem;">Timely delivery across borders with full supply chain support and tracking.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== ANIMATION SCRIPT ===== -->
+<script>
+(function(){
+  const cards = document.querySelectorAll('.landingCard');
+
+  function animateCards() {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    cards.forEach(card => {
+      const cardTop = card.getBoundingClientRect().top;
+      if(cardTop < triggerBottom) {
+        card.style.opacity = 1;
+        card.style.transform = 'translateX(0) scale(1)';
+      }
+    });
+  }
+
+  window.addEventListener('scroll', animateCards);
+  window.addEventListener('load', animateCards);
+})();
+</script>
+
+<!-- ===== LANDING FEATURES RESPONSIVE STYLES ===== -->
+<style>
+  @media (max-width: 992px){
+    #landingFeatures h2 { font-size:2rem; }
+    #landingFeatures p { font-size:1rem; }
+    .landingCard { flex:1 1 45%; max-width:45%; }
+  }
+  @media (max-width: 576px){
+    #landingFeatures { padding:60px 3%; }
+    #landingFeatures h2 { font-size:1.6rem; }
+    #landingFeatures p { font-size:0.95rem; }
+    .landingCard { flex:1 1 100%; max-width:100%; }
+  }
+</style>
+<!-- ===== LANDING/FEATURES SECTION END ===== -->
+
+
+<!-- ===== WHY CHOOSE US SECTION START ===== -->
+<section id="whyChooseUs" style="background:#0D0D0D;color:#EDEDED;font-family:Georgia,serif;padding:80px 5%;text-align:center;">
+
+  <!-- Section Heading -->
+  <div style="margin-bottom:60px;">
+    <h2 style="color:#D4AF37;font-size:2.5rem;margin-bottom:10px;">Why Choose Terraflux</h2>
+    <p style="max-width:700px;margin:auto;font-size:1.1rem;color:#EDEDED;">
+      Premium solutions and expertise for seamless global operations.
+    </p>
+  </div>
+
+  <!-- Features Grid -->
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:30px;">
+
+    <!-- Feature Cards -->
+    <div class="featureCard" style="background:#1A1A1A;border:1px solid #D4AF37;border-radius:12px;flex:1 1 250px;max-width:280px;padding:25px;opacity:0;transform:translateY(50px);transition:all 0.8s ease;">
+      <img src="https://images.unsplash.com/photo-1603993097397-89e53d7a68a7?auto=format&fit=crop&w=100&q=80" alt="Global Reach" style="width:60px;height:60px;margin-bottom:15px;">
+      <h3 style="color:#D4AF37;font-size:1.3rem;margin-bottom:10px;">Global Reach</h3>
+      <p style="font-size:0.95rem;">Operating in multiple countries with reliable logistics and supply chain solutions.</p>
+    </div>
+
+    <div class="featureCard" style="background:#1A1A1A;border:1px solid #D4AF37;border-radius:12px;flex:1 1 250px;max-width:280px;padding:25px;opacity:0;transform:translateY(50px);transition:all 0.8s ease 0.2s;">
+      <img src="https://images.unsplash.com/photo-1603993097397-89e53d7a68a7?auto=format&fit=crop&w=100&q=80" alt="Premium Quality" style="width:60px;height:60px;margin-bottom:15px;">
+      <h3 style="color:#D4AF37;font-size:1.3rem;margin-bottom:10px;">Premium Quality</h3>
+      <p style="font-size:0.95rem;">Handling commodities and spices with the utmost care and professionalism.</p>
+    </div>
+
+    <div class="featureCard" style="background:#1A1A1A;border:1px solid #D4AF37;border-radius:12px;flex:1 1 250px;max-width:280px;padding:25px;opacity:0;transform:translateY(50px);transition:all 0.8s ease 0.4s;">
+      <img src="https://images.unsplash.com/photo-1603993097397-89e53d7a68a7?auto=format&fit=crop&w=100&q=80" alt="Timely Delivery" style="width:60px;height:60px;margin-bottom:15px;">
+      <h3 style="color:#D4AF37;font-size:1.3rem;margin-bottom:10px;">Timely Delivery</h3>
+      <p style="font-size:0.95rem;">Strict schedules and real-time tracking for every shipment to ensure punctuality.</p>
+    </div>
+
+    <div class="featureCard" style="background:#1A1A1A;border:1px solid #D4AF37;border-radius:12px;flex:1 1 250px;max-width:280px;padding:25px;opacity:0;transform:translateY(50px);transition:all 0.8s ease 0.6s;">
+      <img src="https://images.unsplash.com/photo-1603993097397-89e53d7a68a7?auto=format&fit=crop&w=100&q=80" alt="Professional Team" style="width:60px;height:60px;margin-bottom:15px;">
+      <h3 style="color:#D4AF37;font-size:1.3rem;margin-bottom:10px;">Professional Team</h3>
+      <p style="font-size:0.95rem;">Experts in supply chain, warehousing, and logistics delivering excellence every time.</p>
+    </div>
+
+    <div class="featureCard" style="background:#1A1A1A;border:1px solid #D4AF37;border-radius:12px;flex:1 1 250px;max-width:280px;padding:25px;opacity:0;transform:translateY(50px);transition:all 0.8s ease 0.8s;">
+      <img src="https://images.unsplash.com/photo-1603993097397-89e53d7a68a7?auto=format&fit=crop&w=100&q=80" alt="Secure Handling" style="width:60px;height:60px;margin-bottom:15px;">
+      <h3 style="color:#D4AF37;font-size:1.3rem;margin-bottom:10px;">Secure Handling</h3>
+      <p style="font-size:0.95rem;">Ensuring the safety and security of all goods from storage to delivery.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== ANIMATION SCRIPT ===== -->
+<script>
+(function(){
+  const features = document.querySelectorAll('.featureCard');
+
+  function animateFeatures() {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    features.forEach(feature => {
+      const top = feature.getBoundingClientRect().top;
+      if(top < triggerBottom) {
+        feature.style.opacity = 1;
+        feature.style.transform = 'translateY(0)';
+      }
+    });
+  }
+
+  window.addEventListener('scroll', animateFeatures);
+  window.addEventListener('load', animateFeatures);
+})();
+</script>
+
+<!-- ===== RESPONSIVE STYLES ===== -->
+<style>
+  @media (max-width: 992px){
+    #whyChooseUs h2 { font-size:2rem; }
+    #whyChooseUs p { font-size:1rem; }
+    .featureCard { flex:1 1 45%; max-width:45%; }
+  }
+  @media (max-width: 576px){
+    #whyChooseUs { padding:60px 3%; }
+    #whyChooseUs h2 { font-size:1.6rem; }
+    #whyChooseUs p { font-size:0.95rem; }
+    .featureCard { flex:1 1 100%; max-width:100%; }
+  }
+</style>
+<!-- ===== WHY CHOOSE US SECTION END ===== -->
+<!-- ===== FOOTER START ===== -->
+<footer style="background:#0D0D0D;color:#EDEDED;font-family:Georgia,serif;padding:50px 5%;">
+  <div style="max-width:1400px;margin:auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px;">
+    
+    <!-- ABOUT US -->
+    <div style="flex:1 1 220px;">
+      <h3 style="color:#D4AF37;margin-bottom:15px;">About Us</h3>
+      <p style="font-size:0.9rem;line-height:1.6;">
+        Terraflux Global Ventures is a leader in logistics, warehousing, and supply chain solutions, connecting businesses worldwide with efficiency and precision.
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div style="flex:1 1 150px;">
+      <h3 style="color:#D4AF37;margin-bottom:15px;">Quick Links</h3>
+      <ul style="list-style:none;padding:0;">
+        <li><a href="index.html" style="color:#EDEDED;text-decoration:none;font-size:0.9rem;">Home</a></li>
+        <li><a href="about.html" style="color:#EDEDED;text-decoration:none;font-size:0.9rem;">About</a></li>
+        <li><a href="logistics.html" style="color:#EDEDED;text-decoration:none;font-size:0.9rem;">Logistics</a></li>
+        <li><a href="warehousing.html" style="color:#EDEDED;text-decoration:none;font-size:0.9rem;">Warehousing</a></li>
+        <li><a href="contact.html" style="color:#EDEDED;text-decoration:none;font-size:0.9rem;">Contact</a></li>
       </ul>
     </div>
 
-    <!-- ===== RIGHT SIDE: Image + Cards ===== -->
-    <div class="right-side" style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 20px; opacity: 0; transform: translateX(50px); transition: all 1s ease-in-out;">
-
-      <!-- Main Image -->
-      <img src="https://images.unsplash.com/photo-1606788075762-2c17e0f5b88f?auto=format&fit=crop&w=800&q=80" style="width: 100%; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.5);">
-
-      <!-- Cards -->
-      <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-        <div style="flex: 1; min-width: 150px; background-color: #222; border-radius: 10px; padding: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.4); transition: transform 0.3s; cursor: pointer;">
-          <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Fast Delivery</h3>
-          <p style="font-size: 0.95rem; line-height: 1.4;">Timely and reliable shipments across global markets.</p>
-        </div>
-        <div style="flex: 1; min-width: 150px; background-color: #222; border-radius: 10px; padding: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.4); transition: transform 0.3s; cursor: pointer;">
-          <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Quality Assurance</h3>
-          <p style="font-size: 0.95rem; line-height: 1.4;">Premium spices & dry fruits with strict quality checks.</p>
-        </div>
-        <div style="flex: 1; min-width: 150px; background-color: #222; border-radius: 10px; padding: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.4); transition: transform 0.3s; cursor: pointer;">
-          <h3 style="font-size: 1.2rem; margin-bottom: 10px;">Secure Warehousing</h3>
-          <p style="font-size: 0.95rem; line-height: 1.4;">Modern storage with safety and freshness guaranteed.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- ======= NEXT SECTION END ======= -->
-
-<!-- ======= ANIMATION SCRIPT START ======= -->
-<script>
-  // Simple scroll-in animation for left and right sides
-  function revealOnScroll() {
-    const left = document.querySelector('.left-side');
-    const right = document.querySelector('.right-side');
-    const windowHeight = window.innerHeight;
-    const leftTop = left.getBoundingClientRect().top;
-    const rightTop = right.getBoundingClientRect().top;
-
-    if(leftTop < windowHeight - 100) {
-      left.style.opacity = 1;
-      left.style.transform = 'translateX(0)';
-    }
-    if(rightTop < windowHeight - 100) {
-      right.style.opacity = 1;
-      right.style.transform = 'translateX(0)';
-    }
-  }
-
-  window.addEventListener('scroll', revealOnScroll);
-  window.addEventListener('load', revealOnScroll);
-</script>
-<!-- ======= ANIMATION SCRIPT END ======= -->
-
-<!-- ======= RESPONSIVE STYLES START ======= -->
-<style>
-  @media (max-width: 991px) {
-    #features h2 { font-size: 2rem; }
-    #features p, #features li { font-size: 1rem; }
-    .right-side div { min-width: 100%; }
-  }
-  @media (max-width: 576px) {
-    #features { padding: 60px 15px; }
-    #features h2 { font-size: 1.7rem; }
-    #features p, #features li { font-size: 0.95rem; }
-  }
-
-  /* Card hover effect */
-  .right-side div:hover {
-    transform: translateY(-5px);
-  }
-</style>
-<!-- ======= RESPONSIVE STYLES END ======= -->
- <!-- ======= NEXT SESSION START ======= -->
-<section id="services" style="width: 100%; padding: 80px 20px; background-color: #000; color: #FFD700; font-family: Arial, sans-serif; overflow: hidden;">
-
-  <div style="max-width: 1200px; margin: auto; text-align: center;">
-    <h2 style="font-size: 2.5rem; margin-bottom: 40px; opacity:0; transform: translateY(50px); transition: all 1s ease-in-out;" class="reveal">Our Premium Services</h2>
-    
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
-      
-      <!-- Card 1 -->
-      <div class="service-card" style="flex: 1; min-width: 250px; max-width: 300px; background-color: #111; padding: 20px; border-radius: 10px; box-shadow: 0 5px 20px rgba(255,215,0,0.2); opacity:0; transform: translateY(50px); transition: all 1s ease-in-out;">
-        <img src="https://images.unsplash.com/photo-1616627569481-66a9d0f8c5df?auto=format&fit=crop&w=600&q=80" style="width:100%; border-radius: 8px; margin-bottom: 15px;">
-        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Global Logistics</h3>
-        <p>Efficient worldwide logistics ensuring timely deliveries for your business.</p>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="service-card" style="flex: 1; min-width: 250px; max-width: 300px; background-color: #111; padding: 20px; border-radius: 10px; box-shadow: 0 5px 20px rgba(255,215,0,0.2); opacity:0; transform: translateY(50px); transition: all 1s ease-in-out;">
-        <img src="https://images.unsplash.com/photo-1602526216237-1d8f0c7c0423?auto=format&fit=crop&w=600&q=80" style="width:100%; border-radius: 8px; margin-bottom: 15px;">
-        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Premium Products</h3>
-        <p>High-quality spices and dry fruits sourced from trusted global suppliers.</p>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="service-card" style="flex: 1; min-width: 250px; max-width: 300px; background-color: #111; padding: 20px; border-radius: 10px; box-shadow: 0 5px 20px rgba(255,215,0,0.2); opacity:0; transform: translateY(50px); transition: all 1s ease-in-out;">
-        <img src="https://images.unsplash.com/photo-1606788075762-2c17e0f5b88f?auto=format&fit=crop&w=600&q=80" style="width:100%; border-radius: 8px; margin-bottom: 15px;">
-        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Secure Warehousing</h3>
-        <p>Modern storage facilities keeping products fresh, safe, and ready for shipment.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- ======= NEXT SESSION END ======= -->
-
-<!-- ======= ANIMATION SCRIPT START ======= -->
-<script>
-  // Reveal elements on scroll
-  function revealNextSession() {
-    const elements = document.querySelectorAll('.reveal, .service-card');
-    const windowHeight = window.innerHeight;
-
-    elements.forEach(el => {
-      const top = el.getBoundingClientRect().top;
-      if(top < windowHeight - 100){
-        el.style.opacity = 1;
-        el.style.transform = 'translateY(0)';
-      }
-    });
-  }
-
-  window.addEventListener('scroll', revealNextSession);
-  window.addEventListener('load', revealNextSession);
-</script>
-<!-- ======= ANIMATION SCRIPT END ======= -->
-
-<!-- ======= RESPONSIVE STYLES START ======= -->
-<style>
-  @media (max-width: 991px) {
-    #services h2 { font-size: 2rem; }
-    .service-card h3 { font-size: 1.2rem; }
-    .service-card p { font-size: 1rem; }
-  }
-  @media (max-width: 576px) {
-    #services { padding: 60px 15px; }
-    #services h2 { font-size: 1.7rem; }
-    .service-card h3 { font-size: 1.1rem; }
-    .service-card p { font-size: 0.95rem; }
-  }
-</style>
-<!-- ======= RESPONSIVE STYLES END ======= -->
- <!-- ======= PERFORMANCE / HIGHLIGHTS SESSION START ======= -->
-<section id="performance" style="width: 100%; padding: 100px 20px; background-color: #111; color: #FFD700; font-family: Arial, sans-serif; text-align: center; overflow: hidden;">
-
-  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 50px;">
-
-    <!-- Stat 1 -->
-    <div class="stat-card" style="flex: 1; min-width: 200px; max-width: 250px; padding: 30px; border-radius: 15px; background-color: #222; box-shadow: 0 5px 25px rgba(255,215,0,0.2); opacity:0; transform: translateY(50px); transition: all 0.8s ease-in-out;">
-      <h2 style="font-size: 3rem; margin-bottom: 10px; text-shadow: 0 0 10px #FFD700;">950K+</h2>
-      <p style="font-size: 1.1rem;">Deliveries</p>
-    </div>
-
-    <!-- Stat 2 -->
-    <div class="stat-card" style="flex: 1; min-width: 200px; max-width: 250px; padding: 30px; border-radius: 15px; background-color: #222; box-shadow: 0 5px 25px rgba(255,215,0,0.2); opacity:0; transform: translateY(50px); transition: all 0.8s ease-in-out;">
-      <h2 style="font-size: 3rem; margin-bottom: 10px; text-shadow: 0 0 10px #FFD700;">450K+</h2>
-      <p style="font-size: 1.1rem;">Global Shipments</p>
-    </div>
-
-    <!-- Stat 3 -->
-    <div class="stat-card" style="flex: 1; min-width: 200px; max-width: 250px; padding: 30px; border-radius: 15px; background-color: #222; box-shadow: 0 5px 25px rgba(255,215,0,0.2); opacity:0; transform: translateY(50px); transition: all 0.8s ease-in-out;">
-      <h2 style="font-size: 3rem; margin-bottom: 10px; text-shadow: 0 0 10px #FFD700;">220K+</h2>
-      <p style="font-size: 1.1rem;">Service Capacity</p>
-    </div>
-
-    <!-- Stat 4 -->
-    <div class="stat-card" style="flex: 1; min-width: 200px; max-width: 250px; padding: 30px; border-radius: 15px; background-color: #222; box-shadow: 0 5px 25px rgba(255,215,0,0.2); opacity:0; transform: translateY(50px); transition: all 0.8s ease-in-out;">
-      <h2 style="font-size: 3rem; margin-bottom: 10px; text-shadow: 0 0 10px #FFD700;">100K+</h2>
-      <p style="font-size: 1.1rem;">Happy Clients</p>
-    </div>
-
-  </div>
-</section>
-<!-- ======= PERFORMANCE / HIGHLIGHTS SESSION END ======= -->
-
-<!-- ======= ANIMATION SCRIPT START ======= -->
-<script>
-  // Scroll reveal with delay for smooth cascading effect
-  function revealStats() {
-    const stats = document.querySelectorAll('.stat-card');
-    const windowHeight = window.innerHeight;
-
-    stats.forEach((stat, index) => {
-      const top = stat.getBoundingClientRect().top;
-      if(top < windowHeight - 100){
-        setTimeout(() => {
-          stat.style.opacity = 1;
-          stat.style.transform = 'translateY(0)';
-        }, index * 150); // cascade effect
-      }
-    });
-  }
-
-  window.addEventListener('scroll', revealStats);
-  window.addEventListener('load', revealStats);
-</script>
-<!-- ======= ANIMATION SCRIPT END ======= -->
-
-<!-- ======= RESPONSIVE & HOVER STYLES START ======= -->
-<style>
-  /* Hover Effect */
-  .stat-card:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 10px 40px rgba(255,215,0,0.5);
-    transition: all 0.3s ease-in-out;
-  }
-
-  /* Responsive */
-  @media (max-width: 991px) {
-    .stat-card h2 { font-size: 2.5rem; }
-    .stat-card p { font-size: 1rem; }
-  }
-  @media (max-width: 576px) {
-    #performance { padding: 60px 15px; }
-    .stat-card h2 { font-size: 2rem; }
-    .stat-card p { font-size: 0.95rem; }
-  }
-</style>
-<!-- ======= RESPONSIVE & HOVER STYLES END ======= -->
- <!-- ======= TESTIMONIALS / CLIENT FEEDBACK SESSION START ======= -->
-<section id="testimonials" style="width: 100%; padding: 100px 20px; background-color: #000; color: #FFD700; font-family: Arial, sans-serif; overflow: hidden; text-align: center;">
-
-  <div style="max-width: 1200px; margin: auto;">
-    <h2 style="font-size: 2.5rem; margin-bottom: 50px; opacity:0; transform: translateY(50px); transition: all 1s ease-in-out;" class="reveal">What Our Clients Say</h2>
-
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
-
-      <!-- Testimonial 1 -->
-      <div class="testimonial-card" style="flex: 1; min-width: 280px; max-width: 350px; background-color: #111; padding: 30px; border-radius: 15px; box-shadow: 0 5px 25px rgba(255,215,0,0.2); opacity:0; transform: translateY(50px); transition: all 0.8s ease-in-out; cursor: pointer;">
-        <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 20px;">“Excellent logistics and consistent quality. Terraflux makes global trade seamless and reliable.”</p>
-        <h4 style="font-size: 1.2rem; margin-bottom: 5px;">– Priya Sharma</h4>
-        <span style="font-size: 0.9rem; color: #FFD700;">Global Trader</span>
-      </div>
-
-      <!-- Testimonial 2 -->
-      <div class="testimonial-card" style="flex: 1; min-width: 280px; max-width: 350px; background-color: #111; padding: 30px; border-radius: 15px; box-shadow: 0 5px 25px rgba(255,215,0,0.2); opacity:0; transform: translateY(50px); transition: all 0.8s ease-in-out; cursor: pointer;">
-        <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 20px;">“Secure warehousing and timely deliveries have helped our business grow globally.”</p>
-        <h4 style="font-size: 1.2rem; margin-bottom: 5px;">– Rajesh Kumar</h4>
-        <span style="font-size: 0.9rem; color: #FFD700;">Spice Exporter</span>
-      </div>
-
-      <!-- Testimonial 3 -->
-      <div class="testimonial-card" style="flex: 1; min-width: 280px; max-width: 350px; background-color: #111; padding: 30px; border-radius: 15px; box-shadow: 0 5px 25px rgba(255,215,0,0.2); opacity:0; transform: translateY(50px); transition: all 0.8s ease-in-out; cursor: pointer;">
-        <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 20px;">“Highly professional service. Easy communication and excellent support for international shipments.”</p>
-        <h4 style="font-size: 1.2rem; margin-bottom: 5px;">– Anjali Verma</h4>
-        <span style="font-size: 0.9rem; color: #FFD700;">Dry Fruits Supplier</span>
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- ======= TESTIMONIALS / CLIENT FEEDBACK SESSION END ======= -->
-
-<!-- ======= ANIMATION SCRIPT START ======= -->
-<script>
-  // Scroll reveal for testimonials
-  function revealTestimonials() {
-    const elements = document.querySelectorAll('.reveal, .testimonial-card');
-    const windowHeight = window.innerHeight;
-
-    elements.forEach((el, index) => {
-      const top = el.getBoundingClientRect().top;
-      if(top < windowHeight - 100){
-        setTimeout(() => {
-          el.style.opacity = 1;
-          el.style.transform = 'translateY(0)';
-        }, index * 150);
-      }
-    });
-  }
-
-  window.addEventListener('scroll', revealTestimonials);
-  window.addEventListener('load', revealTestimonials);
-</script>
-<!-- ======= ANIMATION SCRIPT END ======= -->
-
-<!-- ======= RESPONSIVE & HOVER STYLES START ======= -->
-<style>
-  /* Hover effect */
-  .testimonial-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 10px 40px rgba(255,215,0,0.5);
-    transition: all 0.3s ease-in-out;
-  }
-
-  /* Responsive */
-  @media (max-width: 991px) {
-    #testimonials h2 { font-size: 2rem; }
-    .testimonial-card p { font-size: 0.95rem; }
-    .testimonial-card h4 { font-size: 1.1rem; }
-  }
-  @media (max-width: 576px) {
-    #testimonials { padding: 60px 15px; }
-    #testimonials h2 { font-size: 1.7rem; }
-    .testimonial-card p { font-size: 0.9rem; }
-    .testimonial-card h4 { font-size: 1rem; }
-  }
-</style>
-<!-- ======= RESPONSIVE & HOVER STYLES END ======= -->
- <!-- ======= FOOTER SESSION START ======= -->
-<footer style="width: 100%; background-color: #111; color: #FFD700; font-family: Arial, sans-serif; padding: 60px 20px; text-align: center;">
-
-  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
-
-    <!-- Contact Info -->
-    <div style="flex:1; min-width: 250px; text-align: left;">
-      <h3 style="font-size: 1.5rem; margin-bottom: 15px;">Terraflux Global Ventures</h3>
-      <p style="font-size: 1rem; line-height: 1.6;">
-        #22/23, 2nd Floor, T M Plaza,<br>
-        Double Road, Rajarajeshwari Nagar,<br>
-        Bengaluru – 580096
+    <!-- CONTACT INFO -->
+    <div style="flex:1 1 220px;">
+      <h3 style="color:#D4AF37;margin-bottom:15px;">Contact Us</h3>
+      <p style="font-size:0.9rem;line-height:1.6;">
+        📧 info@terrafluxglobal.com<br>
+        📞 +91 98765 43210<br>
+        📍 123 Business Avenue, Mumbai, India
       </p>
-      <p style="font-size: 1rem; margin:5px 0;">📞 +91 9663938889</p>
-      <p style="font-size: 1rem; margin:5px 0;">🌐 <a href="http://www.terrafluxgv.com" style="color:#FFD700; text-decoration: underline;">www.terrafluxgv.com</a></p>
-      <p style="font-size: 1rem; margin:5px 0;">📧 <a href="mailto:enquiry@terrafluxgv.com" style="color:#FFD700; text-decoration: underline;">enquiry@terrafluxgv.com</a></p>
     </div>
 
-   
-    <!-- Social / Extra -->
-    <div style="flex:1; min-width: 200px; text-align: left;">
-      <h3 style="font-size: 1.5rem; margin-bottom: 15px;">Follow Us</h3>
-      <div style="display:flex; gap:15px; font-size:1.2rem;">
-        <a href="#" style="color:#FFD700; text-decoration:none;">🌐</a>
-        <a href="#" style="color:#FFD700; text-decoration:none;">📘</a>
-        <a href="#" style="color:#FFD700; text-decoration:none;">🐦</a>
-        <a href="#" style="color:#FFD700; text-decoration:none;">🔗</a>
+    <!-- SOCIAL MEDIA -->
+    <div style="flex:1 1 150px;">
+      <h3 style="color:#D4AF37;margin-bottom:15px;">Follow Us</h3>
+      <div style="display:flex;gap:10px;font-size:1.2rem;">
+        <a href="#" style="color:#EDEDED;text-decoration:none;">🔗</a>
+        <a href="#" style="color:#EDEDED;text-decoration:none;">🐦</a>
+        <a href="#" style="color:#EDEDED;text-decoration:none;">📸</a>
+        <a href="#" style="color:#EDEDED;text-decoration:none;">📘</a>
       </div>
     </div>
 
   </div>
 
-  <!-- Footer Bottom -->
-  <div style="margin-top:50px; border-top: 1px solid #FFD700; padding-top:20px; font-size:0.95rem; opacity:0.8;">
-    &copy; 2026 Terraflux Global Ventures Pvt Ltd. All Rights Reserved.
+  <!-- COPYRIGHT -->
+  <div style="text-align:center;margin-top:40px;border-top:1px solid #D4AF37;padding-top:20px;font-size:0.85rem;color:#EDEDED;">
+    &copy; 2026 Terraflux Global Ventures. All Rights Reserved.
   </div>
 </footer>
-<!-- ======= FOOTER SESSION END ======= -->
 
-<!-- ======= RESPONSIVE FOOTER STYLES START ======= -->
+<!-- ===== FOOTER RESPONSIVE STYLES START ===== -->
 <style>
+  /* Stack columns on tablets */
   @media (max-width: 991px) {
-    footer div { text-align: center; }
-    footer ul { text-align: center; }
-    footer h3 { font-size: 1.3rem; }
-    footer p, footer a { font-size: 0.95rem; }
+    footer div[style*="display:flex"] {
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+    }
+    footer div[style*="flex:1 1"] {
+      text-align: center;
+    }
   }
+
+  /* Mobile adjustments */
   @media (max-width: 576px) {
-    footer { padding: 40px 15px; }
+    footer { padding: 40px 10px; }
     footer h3 { font-size: 1.2rem; }
-    footer p, footer a { font-size: 0.9rem; }
+    footer p, footer a { font-size: 0.85rem; line-height:1.4; }
+    footer div[style*="display:flex;gap:10px"] {
+      justify-content: center;
+      gap: 15px;
+      font-size: 1rem;
+    }
   }
 </style>
-<!-- ======= RESPONSIVE FOOTER STYLES END ======= -->
-</body>
-</html>
+<!-- ===== FOOTER RESPONSIVE STYLES END ===== -->
+<!-- ===== FOOTER END ===== -->
